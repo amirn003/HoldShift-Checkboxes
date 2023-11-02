@@ -7,10 +7,12 @@ function handleCheck(e) {
   console.log(e.shiftKey);
   if(e.shiftKey && this.checked) {
     checkboxes.forEach((checkbox) => {
-      console.log("INBetween ", inBetween);
-      console.log(checkbox.value);
       if (checkbox === this || checkbox === lastChecked) {
         inBetween = !inBetween;
+      }
+
+      if(inBetween) {
+        checkbox.checked = true;
       }
 
     });
