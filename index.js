@@ -3,10 +3,16 @@ let lastChecked;
 
 function handleCheck(e) {
   let inBetween = false;
+
   console.log(e.shiftKey);
   if(e.shiftKey && this.checked) {
     checkboxes.forEach((checkbox) => {
-      console.log(checkbox);
+      console.log("INBetween ", inBetween);
+      console.log(checkbox.value);
+      if (checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween;
+      }
+
     });
   }
   lastChecked = this;
